@@ -1,0 +1,471 @@
+body
+{
+  margin:0;
+  overflow-X:hidden;
+  font-family:"Raleway","Roboto","Helvetica",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-font-smoothing:antialiased;
+  -ms-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  background:rgba(18,18,26,1);
+  background-image:url('http://artlantis-media.ru/static/img/0000/0002/7260/27260842.qvpm616fga.png');
+  background-blend-mode:overlay;
+  background-size:15%;
+}
+::-webkit-scrollbar
+{
+  display:none;
+}
+
+/*Grid Wrapper*/
+ 
+#home
+{
+  color:#aaaaaf;
+  width:100%;
+  height:100%;
+  position:relative;
+  padding:100px;
+  display:block;
+  transition:transform 0.5s ease-in-out;
+}
+#home>section
+{
+  position:relative;
+}
+#home>.header>div
+{
+  position:relative;
+  display:inline-block;
+  margin-right:25px;
+  vertical-align:middle;
+  text-shadow:0px 5px 10px rgba(0,0,0,1);
+}
+#home>.pagetag
+{
+  position:absolute;
+  top:10px;
+  left:10px;
+  padding:10px 15px;
+  font-size:0.8em;
+  color:rgba(96,78,177,1);
+  background:rgba(0,0,0,0.1);
+}
+/*Heading*/
+#home .logo
+{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background-image:url("http://twths.org/wp/wp-content/uploads/2015/12/coldplay-a-head-full-of-dreams-album-art-560x560.jpg");
+  background-size:100%;
+  background-position:50% 50%;
+  box-shadow:0px 0px 20px -10px rgba(0,0,0,0.5);
+}
+#home h2
+{
+  font-weight:300;
+  letter-spacing:0.07em;
+  margin-left:-20px;
+}
+#home h5
+{
+  margin-top:-20px;
+  font-weight:400;
+  letter-spacing:1.9em;
+}
+#home h2>span:first-child
+{
+  font-size:3em;
+}
+#home h2>span:nth-child(2)
+{
+  font-size:2em;
+  margin-left:-0.2em;
+  font-weight:400;
+}
+#grid_wrapper
+{
+  width:100%;
+  display:inline-block;
+  margin-top:60px;
+  box-sizing:border-box;
+  padding:0px 20px;
+  margin-left:-100px;
+  position:relative;
+}
+#grid_wrapper.init>card
+{
+  transform:scale(0);
+}
+#grid_wrapper>card
+{
+  display:block;
+  width:25%;
+  height:200px;
+  float:left;
+  transition:transform 0.3s cubic-bezier(0,0,0,1);
+  padding:20px;
+  box-sizing:border-box;
+}
+#grid_wrapper>card>div,#content_wrapper>.clone
+{
+  color:#aaaaaf;
+  cursor:pointer;
+  width:100%;
+  height:100%;
+  position:relative;
+  transition:box-shadow 0.3s;
+  overflow:hidden;
+  border:1px solid rgba(66,76,119,0.1);
+  box-shadow:0px 20px 50px 0px rgba(0,0,0,0.2);
+}
+#grid_wrapper>card>div.active
+{
+  opacity:0;
+}
+#grid_wrapper>card>div:hover
+{
+  box-shadow:0px 30px 60px 0px rgba(0,0,0,0.25);
+}
+#grid_wrapper>card>div:before,#content_wrapper>.clone:before
+{
+  width:100%;
+  height:100%;
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  background-size:100%;
+  background-position:50% 50%;
+  background-blend-mode:overlay;
+  background-image:url("https://emersonkeeling.files.wordpress.com/2015/12/ahfod.gif");
+  background-color:rgba(43,26,119,0.25);
+  transition:all 0.2s;
+  -webkit-filter:blur(3px);
+  -moz-filter:blur(3px);
+  filter:blur(3px);
+  -ms-filter:blur(3px);
+}
+#grid_wrapper>card>div>span,#content_wrapper>.clone>span
+{
+  width:100%;
+  height:50px;
+  margin-top:-25px;
+  top:50%;
+  position:absolute;
+  line-height:50px;
+  display:block;
+  text-align:center;
+  font-size:1.5em;
+  opacity:1;
+}
+/*End of Section*/
+
+/*NavBar Style*/
+/*Comes up only when you're open in a section*/
+nav.main
+{
+  overflow-X:auto;
+  overflow-Y:visible;
+  z-index:+25;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:55px;
+  display:block;
+  white-space:nowrap;
+}
+body:after,#footer:after,#footer:before
+{
+  /* background: linear-gradient(90deg, rgba(190,78,114,1) 0%, rgba(254,117,98,1) 33.33%, rgba(86,72,105,1) 66.66%,  rgba(126,70,99,1) 100%) */;
+  background-image: linear-gradient(90deg, rgba(107,208,228,1) 0%, rgba(96,78,177,1) 33%, rgba(200,142,102,1) 66%, rgba(201,85,169,1) 100%); /* w3c */
+  content:"";
+  position:fixed;
+  width:100%;
+  top:0px;
+  left:0px;
+  height:5px;
+  z-index:+30;
+}
+nav.main.inactive>.tab
+{
+  transform:rotateX(90deg) translateY(-25px);
+}
+nav.main>.tab
+{
+  transform-origin:50% 0% 0px;
+  background:#fff;
+  box-sizing:border-box;
+  /* border-top:5px solid; */
+  font-weight:600;
+  font-size:0.9em;
+  color:#161725;
+  display:inline-block;
+  width:15%;
+  text-align:center;
+  line-height:45px;
+  height:100%;
+  border-top:rgba(0,0,0,0.5) 5px solid;
+  position:relative;
+  cursor:pointer;
+  overflow:hidden;
+  transition:transform 0.5s cubic-bezier(0,0,0,1);
+}
+nav.main>.tab.active
+{
+  z-index:+5000;
+}
+nav.main>.tab.active>span
+{
+  background:#d5d5d5;
+}
+nav.main>.tab>span
+{
+  width:100%;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  height:100%;
+  display:block;
+  transform:line-height 0.2s;
+}
+nav.main>.tab:not(.active)>span:hover
+{
+  background:#dadada;
+}
+nav.main>.tab:after
+{
+  content:"";
+  top:0;
+  right:0;
+  position:absolute;
+  border-top:0px solid transparent;
+  border-bottom:50px solid transparent;
+  border-right:0px solid rgba(0,0,0,0.05);
+  transition:all 0.2s;
+}
+nav.main>.tab:hover:after
+{
+  content:"";
+  right:0;
+  position:absolute;
+  border-top:0px solid transparent;
+  border-bottom:55px solid transparent;
+  border-right:10px solid rgba(0,0,0,0.1);
+}
+/*End of Section*/
+
+/*Ripple Styling*/
+.ripple
+{
+  position:fixed;
+  animation:ripple 1s 1 ease-out;
+  background:rgba(0,0,0,0.5);
+  margin:-250px;
+  width:500px;
+  height:500px;
+  transform:scale(10);
+  position:absolute;
+  border-radius:50%;
+  opacity:0;
+}
+  
+/*One for the BIIIIG ONE!*/
+
+.mega.ripple
+{
+  border-radius:50%;
+  background:rgba(255,255,255,0.1);
+  opacity:1;
+}
+@keyframes ripple
+{
+  0%{
+    opacity:1;
+    transform:scale(0);
+  }
+}
+/*End of Section*/
+
+/*This one Wraps content of the tabs*/
+#content_wrapper.inactive
+{
+ pointer-events:none; 
+}
+#content_wrapper
+{
+  position:fixed;
+  z-index:+20;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  display:block;
+  perspective:1000px;
+}
+#content_wrapper>div.content
+{
+  z-index:+50;
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow-y: auto; 
+  left:0;
+  display:block;
+  box-sizing:border-box;
+  padding:5%;
+  padding-top:100px;
+}
+#content_wrapper>div.clone.deactivate
+{
+   background:linear-gradient(#14151a,#161725); 
+}
+#content_wrapper>div.clone.deactivate>span{
+  font-size:50em;
+  opacity:0;
+  animate:blow 0.5s 0s cubic-bezier(0,0,0,1);
+}
+@keyframes blow
+{
+  to{
+    font-size:50em;
+    opacity:0;
+  }
+}
+#content_wrapper>div.clone.deactivate:before
+{
+  animation:fadeOut 0.25s 0s 1 cubic-bezier;
+  opacity:0;
+}
+@keyframes fadeOut
+{
+  from{
+    opacity:1;
+  }
+}
+#content_wrapper>div.clone
+{
+  width:100%;
+  height:100%;
+  transform-origin:50% 50%;
+  position:absolute;
+  transform-origin:50% 50%;
+  transform:translate(-50%,-50%) rotateY(180deg);
+  animation:flipOpen 0.5s 0s 1 cubic-bezier(0,0,0,1);
+}
+
+#content_wrapper.inactive>div.clone
+{
+  animation:flipClose 0.7s 0s 1 cubic-bezier(0,0,0,1);
+  transform:translate(-50%,-50%);
+  position:absolute;
+}
+@keyframes flipOpen
+{
+  from{
+    transform:translate(-50%,-50%);
+  }
+}
+@keyframes flipClose
+{
+  from{
+    transform:translate(-50%,-50%) rotateY(180deg);
+  }
+}
+#content_wrapper>div.content>section.active
+{
+  opacity:1;
+  transform:none;
+}
+#content_wrapper>div.content>section{
+  color:#aaa;
+  position:absolute;
+  top:100px;
+  left:5%;
+  opacity:0;
+  transition:all 0.5s;
+  transform:translateY(-100px);
+}
+#content_wrapper.inactive>button
+{
+  opacity:0;
+}
+
+#content_wrapper>button
+{
+  z-index:+100;
+  transition:opacity 0.2s 1s;
+  padding:20px;
+  font-family:"FontAwesome";
+  color:white;
+  font-size:1.2em;
+  background:none;
+  outline:none;
+  border:none;
+  position:fixed;
+  top:60px;
+  right:0;
+  cursor:pointer;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: #393838;
+    border-style: inset;
+    border-width: 1px;
+}
+
+table {
+    margin-top: 90px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1350px;
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+    color: goldenrod;
+}
+
+table.dataframe td {
+    max-width: 300px;
+    color: white;
+    word-break: break-word;
+    padding: 8px;
+}
+
+/*End of Section*/
+
+
+/*Footer Design*/
+#footer
+{
+  font-size:0.9em;
+  position:relative;
+  margin-top:200px;
+  width:100%;
+  height:70px;
+  text-align:center;
+  color:rgba(255,255,255,0.3);
+  z-index:+15;
+}
+
+#footer:before
+{
+  position:absolute;
+  top:0;
+  height:3px;
+}
+#footer:after
+{
+  position:absolute;
+  bottom:1px;
+  top:unset;
+  height:3px;
+}
+/*End of Section*/
