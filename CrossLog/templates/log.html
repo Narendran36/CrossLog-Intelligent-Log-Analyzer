@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<style type="text/css">
+button {
+    z-index: +100;
+    transition: opacity 0.2s 1s;
+    padding: 20px;
+    font-family: "FontAwesome";
+    color: white;
+    font-size: 1.2em;
+    background: none;
+    outline: none;
+    border: none;
+    position: fixed;
+    top: 45px;
+    right: 0;
+    cursor: pointer;
+}
+</style>
+
+<button class="close" onclick="window.location.href='/'">&#xf00d;</button>
+
+<h2 style="position:absolute;top: 45px; left: 42%; color: lightgoldenrodyellow;">Scan Completed</h2>
+      <br/>
+      <div>
+        {{value1 | safe}}
+      </div>
+{% endblock %}

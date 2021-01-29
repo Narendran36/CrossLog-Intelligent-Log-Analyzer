@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<style type="text/css">
+button {
+    z-index: +100;
+    transition: opacity 0.2s 1s;
+    padding: 20px;
+    font-family: "FontAwesome";
+    color: white;
+    font-size: 1.2em;
+    background: none;
+    outline: none;
+    border: none;
+    position: fixed;
+    top: 45px;
+    right: 0;
+    cursor: pointer;
+}
+
+pre {
+    display: block;
+    margin-left: 30%;
+    margin-top: 100px;
+    margin-bottom: 1rem;
+    overflow: auto;
+    font-size: 1.1em;
+}
+</style>
+
+<button class="close" onclick="window.location.href='/'">&#xf00d;</button>
+
+<h2 style="position:absolute;top: 45px; left: 42%; color: lightgoldenrodyellow;">Scan Report</h2>
+      <br/>
+      <pre style="color: goldenrod;">{{value3}}</pre>
+
+{% endblock %}
