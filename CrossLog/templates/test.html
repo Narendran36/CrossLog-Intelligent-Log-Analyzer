@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<style type="text/css">
+button {
+    z-index: +100;
+    transition: opacity 0.2s 1s;
+    padding: 20px;
+    font-family: "FontAwesome";
+    color: white;
+    font-size: 1.2em;
+    background: none;
+    outline: none;
+    border: none;
+    position: fixed;
+    top: 45px;
+    right: 0;
+    cursor: pointer;
+}
+td {
+    color: white;
+}
+</style>
+
+<button class="close" onclick="window.location.href='/'">&#xf00d;</button>
+
+<h2 style="position:absolute;top: 45px; left: 44%; color: lightgoldenrodyellow;">Test Result</h2>
+      <br/>
+    <div>
+    <table style="width: 850px;">
+    <tr>
+        <th>Type</th>
+        <th>Query</th>
+    </tr>
+        {% for attack, query in Attacks %}
+    <tr>
+        <td style="text-align: center;">{{ attack }}</td>
+        <td style="text-align: center;">{{ query }}</td>
+    </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

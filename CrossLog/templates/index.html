@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- partial:index.partial.html -->
+<nav class="main hList inactive">
+  <div class="tab active"><span>Scan Log</span></div><!--
+  --><div class="tab"><span>Realtime IDS</span></div><!--
+  --><div class="tab"><span>Web App Scanner</span></div><!--
+  --><div class="tab" ><span>Test Query</span></div>
+</nav>
+
+<page id="home">
+  <section class="header">
+    <div>
+      <h2><span>C</span><span> rossLog</span></h2>
+      <h5>Intelligent Log Analzer</h5>
+    </div>
+    <div class='logo'></div>
+  </section>
+  <section id="grid_wrapper" class="init">
+    <card>
+      <div>
+        <span>Scan Log</span>
+      </div>
+    </card>
+    <card>
+      <div>
+        <span>Realtime IDS</span>
+      </div>
+    </card>
+    <card>
+      <div>
+        <span>Web App Scanner</span>
+      </div>
+    </card>
+    <card>
+      <div>
+        <span>Test Query</span>
+      </div>
+    </card>
+  </section>
+</page>
+
+<div id="content_wrapper" class="inactive"> <!-- {% if active != True %} class='inactive' {% endif %}> -->
+  <button class="close">&#xf00d;</button>
+  <div class='content'>
+    <section>
+      <h2>Submit Log File</h2>
+      <p>
+        <form method="POST" action="{{ url_for('log') }}" enctype="multipart/form-data" class="mt-5" required>
+          <div class="form-group d-flex justify-content-between">
+            <input type="file" class="form-control-file" name="log_file" required>
+            <button type="submit" name="button" class="btn btn-primary btn-sm">Submit</button>
+          </div>
+        </form>
+      </p>
+    </section>
+    <section>
+      <h2>Enter Log Location</h2>
+      <p>
+        <form method="POST" action="{{ url_for('ids') }}" enctype="multipart/form-data" class="mt-5" required>
+          <div class="form-group d-flex">
+            <input type="text" class="form-control-file" name="log_location" required>
+            <button type="submit" name="button" class="btn btn-primary btn-sm">Submit</button>
+          </div>
+        </form>
+      </p>
+    </section>
+    <section>
+      <h2>Enter Web Application URL</h2>
+      <p>
+        <form method="POST" action="{{ url_for('scan') }}" enctype="multipart/form-data" class="mt-5" required>
+          <div class="form-group d-flex">
+            <input type="url" class="form-control-file" name="web_url" required>
+            <button type="submit" name="button" class="btn btn-primary btn-sm">Submit</button>
+          </div>
+        </form>
+      </p>  
+    </section>
+    <section>
+      <h2>Enter Test Query</h2>
+      <p>
+        <form method="POST" action="{{ url_for('test') }}" enctype="multipart/form-data" class="mt-5" required>
+          <div class="form-group d-flex">
+            <input type="text" class="form-control-file" name="test_query" required>
+            <button type="submit" name="button" class="btn btn-primary btn-sm">Submit</button>
+          </div>
+        </form>
+      </p>
+    </section>
+  </div>
+</div>
+
+
+<div id="footer">
+  <span style="display:block;font-size:0.9em;line-height:55px;"><span style="display:inline-block;">&copy; <span style="font-family:'Titillium Web';font-weight:900;letter-spacing:0.06em">Wanderlust</span> 2020</span></span>
+  <span style="display:block;font-size:0.7em;line-height:30px;margin-top:-25px;color:rgba(255,255,255,0.15)">&lang; Narendran | Vikas | Suhaib &rang;<span>
+</div>
+{% endblock %}
