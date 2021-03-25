@@ -15,11 +15,22 @@
 ```
 3. ***Run app.py***<br />
 ```
-    streamlit run setup.py
+    python3 app.py
+    navigate to local host
+    http://127.0.0.1:5000/
+    
 ```
-4. ***Run cyrim.py***<br />
+4. ***scan log***<br />
 ```
-    streamlit run cyrim.py
+    browse the log file and submit
+    displays different types of attacks present in the log file
+    
+```
+5. ***real time IDS***<br />
+```
+    browse the log file and submit
+    displays different types of attacks present in the log file
+    
 ```
 ***Ensure both these files are on same folder***<br />
 <br />
