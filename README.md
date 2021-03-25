@@ -1,5 +1,5 @@
 # CrossLog: Intelligent-Log-Analyzer
-CrossLog: Intelligent Log Analyzer is a Machine Learning based real-time Intrusion detection system and Web Application security scanner, powered using python3 and flask. It wields defense against Cross-Site Scripting (XSS), Path Traversal attacks, Server Side Includes (SSI), OS Command Injections, XPath Injections, LDAP Injections, CRLF Injections, and other Anomalous categories.
+*CrossLog: Intelligent Log Analyzer is a Machine Learning based real-time Intrusion detection system and Web Application security scanner, powered using python3 and flask. It wields defense against Cross-Site Scripting (XSS), Path Traversal attacks, Server Side Includes (SSI), OS Command Injections, XPath Injections, LDAP Injections, CRLF Injections, and other Anomalous categories.*
 1. ***Download Crosslog files***<br />
 ```
     i.   Open terminal
