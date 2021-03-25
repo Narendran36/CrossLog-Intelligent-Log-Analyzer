@@ -21,10 +21,13 @@
     
    
 ```
-4. ***Scan log***<br />
+4. Markup : * ***Features***
 ```
+              * ***Scan log***<br />
+
     Browse the log file and submit
     Displays different types of attacks present in the log file
+
     
 ```
 5. ***Realtime IDS***<br />
@@ -45,8 +48,7 @@
     Displays attack type of query
     
 ```
-Markup : * Bullet list
-              * Nested bullet
+
 
 
 ***demo link:*** (will be updated)<br />
