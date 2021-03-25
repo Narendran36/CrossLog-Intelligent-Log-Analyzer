@@ -21,13 +21,10 @@
     
 ```
 4.***Scan log***<br />
-
+``` 
     Browse the log file and submit
     Displays different types of attacks present in the log file
-```
-              * 
-
-    
+   
 ```
 5. ***Realtime IDS***<br />
 ```
