@@ -10,9 +10,10 @@
 ```
     pip install flask
     pip install scikit-learn==0.22.2.post1
+    pip install scrapy
     
 ```
-3. ***Run setup.py***<br />
+3. ***Run app.py***<br />
 ```
     streamlit run setup.py
 ```
