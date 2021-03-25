@@ -45,8 +45,6 @@
     Displays attack type of query
     
 ```
-***Ensure both these files are on same folder***<br />
+
+***demo link:*** (will be updated)<br />
 <br />
-***demo link:*** https://www.youtube.com/watch?v=dHDgCRXyUeY<br />
-<br />
-***Note:*** Visualize the working using Fake_News_ML.ipynb ( download True.csv and Fake.csv before ) from Colab
