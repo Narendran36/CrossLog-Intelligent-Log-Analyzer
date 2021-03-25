@@ -1,9 +1,10 @@
 # CrossLog: Intelligent-Log-Analyzer
-1. ***download specific directory from root directory***<br />
+1. ***Download Crosslog files***<br />
 ```
-    i.   svn checkout https://github.com/Narendran36/CrossLog-Intelligent-Log-Analyzer/trunk/CrossLog
-    ii.  Extract requirments.rar
-    iii. apt-get install python3-pip -y
+    i.   Open terminal
+    ii.  Run command: svn checkout https://github.com/Narendran36/CrossLog-Intelligent-Log-Analyzer/trunk/CrossLog
+    iii. Extract requirments.rar in CrossLog directory
+    iv.  Run command: apt-get install python3-pip -y
 ```
 
 2. ***Install necessary libraries***<br />
@@ -16,9 +17,9 @@
 3. ***Run app.py***<br />
 ```
     python3 app.py
-    navigate to local host
-    http://127.0.0.1:5000/
+    navigate to http://127.0.0.1:5000/
     
+   
 ```
 4. ***scan log***<br />
 ```
@@ -26,7 +27,7 @@
     displays different types of attacks present in the log file
     
 ```
-5. ***real time IDS***<br />
+5. ***realtime IDS***<br />
 ```
     browse the log file and submit
     displays different types of attacks present in the log file
