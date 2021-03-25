@@ -19,14 +19,13 @@
     python3 app.py
     Navigate to http://127.0.0.1:5000/
     
-   
 ```
-4. Markup : * ***Features***
-```
-              * ***Scan log***<br />
+4.***Scan log***<br />
 
     Browse the log file and submit
     Displays different types of attacks present in the log file
+```
+              * 
 
     
 ```
@@ -51,5 +50,5 @@
 
 
 
-***demo link:*** (will be updated)<br />
+***demo link:*** (to be updated)<br />
 <br />
