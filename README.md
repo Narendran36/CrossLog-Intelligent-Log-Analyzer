@@ -17,20 +17,32 @@
 3. ***Run app.py***<br />
 ```
     python3 app.py
-    navigate to http://127.0.0.1:5000/
+    Navigate to http://127.0.0.1:5000/
     
    
 ```
-4. ***scan log***<br />
+4. ***Scan log***<br />
 ```
-    browse the log file and submit
-    displays different types of attacks present in the log file
+    Browse the log file and submit
+    Displays different types of attacks present in the log file
     
 ```
-5. ***realtime IDS***<br />
+5. ***Realtime IDS***<br />
 ```
-    browse the log file and submit
-    displays different types of attacks present in the log file
+    Insert webserver log location and submit
+    Realtime scan results are displayed
+    
+```
+6. ***Web app scanner***<br />
+```
+    Enter web application url and submit
+    Scanned result will displays the vulnerability of that web application
+    
+```
+7. ***Test query***<br />
+```
+    Enter query to test
+    Displays attack type of query
     
 ```
 ***Ensure both these files are on same folder***<br />
