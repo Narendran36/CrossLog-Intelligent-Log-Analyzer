@@ -9,13 +9,8 @@
 2. ***Install necessary libraries***<br />
 ```
     pip install flask
-    pip install streamlit
-    pip install plotly
-    pip install --upgrade nbformat
-    pip install nltk
-    pip install spacy
-    pip install WordCloud
-    pip install gensim
+    pip install scikit-learn==0.22.2.post1
+    
 ```
 3. ***Run setup.py***<br />
 ```
