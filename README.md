@@ -1,4 +1,4 @@
-# CYRIM: Fake News Detector
+# CrossLog: Intelligent-Log-Analyzer
 1. ***How to download specific directory from root directory***<br />
 ```
     i.   svn checkout https://github.com/Narendran36/CrossLog-Intelligent-Log-Analyzer/trunk/CrossLog
