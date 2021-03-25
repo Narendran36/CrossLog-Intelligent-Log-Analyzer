@@ -1,14 +1,14 @@
 # CYRIM: Fake News Detector
-1. ***How to get the csv files***<br />
+1. ***How to download specific directory from root directory***<br />
 ```
-    i.   Download Datasets.rar
-    ii.  Extract to same directory
-    iii. Keep True.csv and Fake.csv at programs folder
+    i.   svn checkout https://github.com/Narendran36/CrossLog-Intelligent-Log-Analyzer/trunk/CrossLog
+    ii.  Extract requirments.rar
+    iii. apt-get install python3-pip -y
 ```
 
 2. ***Install necessary libraries***<br />
 ```
-    pip install --upgrade tensorflow-gpu==2.0
+    pip install flask
     pip install streamlit
     pip install plotly
     pip install --upgrade nbformat
