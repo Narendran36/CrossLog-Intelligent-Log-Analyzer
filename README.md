@@ -45,6 +45,9 @@
     Displays attack type of query
     
 ```
+Markup : * Bullet list
+              * Nested bullet
+
 
 ***demo link:*** (will be updated)<br />
 <br />
