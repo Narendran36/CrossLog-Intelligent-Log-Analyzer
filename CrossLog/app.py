@@ -222,7 +222,7 @@ def log():
 def scan():
   if request.method == 'POST':
     if 'web_url' in request.form:
-      result = subprocess.run(['python', 'scanner.py',request.form['web_url'],'--no-redirect'], stdout=subprocess.PIPE)
+      result = subprocess.run(['python3', 'scanner.py',request.form['web_url'],'--no-redirect'], stdout=subprocess.PIPE)
       result = result.stdout.decode('utf-8')
       return render_template('scan.html', value3=result)
   return render_template('scan.html')
