@@ -15,14 +15,15 @@ from pretty_html_table import build_table
 def sendmail(body):
 	message = MIMEMultipart()
 	message['Subject'] = 'CrossLog: Warning IDS Alert'
-	message['From'] = '<sender email id>'                          # Replace i
-	message['To'] = '<receiver email id>'			       # Replace ii
+	message['From'] = '<sender email id>'                          # Replace i (turn on Less secure app access in gmail, create a new account for this purpose)
+	password = '<sender password>'						           # Replace ii
+	message['To'] = '<receiver email id>'                          # Replace iii
 	body_content = body
 	message.attach(MIMEText(body_content, "html"))
 	msg_body = message.as_string()
 	server = SMTP('smtp.gmail.com', 587)
 	server.starttls()
-	server.login(message['From'], '<sender password>')             # Replace iii
+	server.login(message['From'], password)
 	server.sendmail(message['From'], message['To'], msg_body)
 	server.quit()
 
