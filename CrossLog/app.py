@@ -7,6 +7,28 @@ from IPython.display import HTML
 import subprocess
 import os
 
+from smtplib import SMTP
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from pretty_html_table import build_table
+
+def sendmail(body):
+	message = MIMEMultipart()
+	message['Subject'] = 'CrossLog: Warning IDS Alert'
+	message['From'] = '<sender email id>'                          # Replace i
+	message['To'] = '<receiver email id>'			       # Replace ii
+	body_content = body
+	message.attach(MIMEText(body_content, "html"))
+	msg_body = message.as_string()
+	server = SMTP('smtp.gmail.com', 587)
+	server.starttls()
+	server.login(message['From'], '<sender password>')             # Replace iii
+	server.sendmail(message['From'], message['To'], msg_body)
+	server.quit()
+
+
+Send_Email = 0
+
 XSS = pickle.load(open('attacks/XSS.sav', 'rb'))
 SQLi = pickle.load(open('attacks/SQLi.sav', 'rb'))
 PT = pickle.load(open('attacks/PT.sav', 'rb'))
@@ -128,6 +150,8 @@ def XPath_check(url):
   return XPath.predict(df_temp)[0]
 
 def Anomaly_check(url):
+  if url == '/':
+  	return False
   df_temp = pd.DataFrame(columns=Anomaly_L)
   df_temp.loc[0] = 0
   df_temp['RL'] = len(url)
@@ -184,6 +208,8 @@ def index():
 
 @app.route("/log", methods=["GET","POST"])
 def log():
+  global Send_Email
+  Send_Email = 0
   if request.method == 'POST':
     if 'log_file' in request.files:
       log = request.files['log_file'].read()
@@ -220,15 +246,19 @@ def log():
 
 @app.route("/scan", methods=["GET","POST"])
 def scan():
+  global Send_Email
+  Send_Email = 0
   if request.method == 'POST':
     if 'web_url' in request.form:
-      result = subprocess.run(['python3', 'scanner.py',request.form['web_url'],'--no-redirect'], stdout=subprocess.PIPE)
+      result = subprocess.run(['python', 'scanner.py',request.form['web_url'],'--no-redirect'], stdout=subprocess.PIPE)
       result = result.stdout.decode('utf-8')
       return render_template('scan.html', value3=result)
   return render_template('scan.html')
 
 @app.route("/test", methods=["GET","POST"])
 def test():
+  global Send_Email
+  Send_Email = 0
   global Attacks
   if request.method == 'POST':
     if 'test_query' in request.form:
@@ -259,6 +289,7 @@ def test():
 
 @app.route("/myStatus")
 def getStatus():
+	global Send_Email
 	global Location
 	global Data
 	global Position
@@ -266,6 +297,7 @@ def getStatus():
 		fh.seek(Position)
 		lines = fh.readlines()
 		Position = fh.tell()
+	temp_count = len(lines)
 	for l in lines:
 		z = re.match(exp, l)
 		if XSS_check(z[6]):
@@ -290,10 +322,18 @@ def getStatus():
 			x = 'Normal'
 		Data.append([z[1],z[4],z[5],z[6],z[8],x])
 	df = pd.DataFrame(Data, columns=['IP Address', 'Timestamp', 'Method','Request Vector','Response Code','Type'])
+	if Send_Email == 1:
+		notDB = df.tail(temp_count)
+		notDB = notDB[notDB['Type'] != 'Normal']
+		if not notDB.empty:
+			output = build_table(notDB, 'blue_light')
+			sendmail(output)
 	return df.to_html()
 
 @app.route("/ids", methods=["GET","POST"])
 def ids():
+	global Send_Email
+	Send_Email = 1
 	global Location
 	global Position
 	global Data
@@ -302,7 +342,9 @@ def ids():
 			Data = []
 			Location = request.form['log_location']
 			Position = 0
-		return render_template('ids.html',ids_table=getStatus())
+		ids_table=getStatus()
+
+		return render_template('ids.html',ids_table=ids_table)
 	return render_template('ids.html')
 
 if __name__ == '__main__':
