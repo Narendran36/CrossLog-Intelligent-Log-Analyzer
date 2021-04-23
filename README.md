@@ -5,6 +5,7 @@
     i.   Open terminal
     ii.  Run command: svn checkout https://github.com/Narendran36/CrossLog-Intelligent-Log-Analyzer/trunk/CrossLog
     iii. Extract requirments.rar in CrossLog directory
+    iv. Replace <sender email id>, <sender password>, and <receiver email id> with proper values to receive email alerts.
     iv.  Run command: apt-get install python3-pip -y
 ```
 
