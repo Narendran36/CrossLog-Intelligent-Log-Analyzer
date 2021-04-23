@@ -15,7 +15,7 @@ from pretty_html_table import build_table
 def sendmail(body):
 	message = MIMEMultipart()
 	message['Subject'] = 'CrossLog: Warning IDS Alert'
-	message['From'] = '<sender email id>'                          # Replace i (turn on Less secure app access in gmail, create a new account for this purpose)
+	message['From'] = '<sender email id>'                          # Replace i (for email alerts, turn on Less secure app access in gmail, create a new google account for this purpose)
 	password = '<sender password>'				       # Replace ii
 	message['To'] = '<receiver email id>'                          # Replace iii
 	body_content = body
