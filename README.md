@@ -46,7 +46,7 @@
     Displays attack type of query
     
 ```
-***Reasearch Dataset Files***<br /> https://drive.google.com/drive/folders/1jzb8YOe021eZm2SS9na-agPaI5dYZGKr?usp=sharing
+***Reasearch Dataset Files:***<br /> https://drive.google.com/drive/folders/1jzb8YOe021eZm2SS9na-agPaI5dYZGKr?usp=sharing
 
 Read out all the csv files from the csic and ecml folder into pandas dataframe, and merge them together for further processing.
 
